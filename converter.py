@@ -67,7 +67,7 @@ class WeynTool:
             
             print(f'{BRIGHT_BLUE} ═══════════════════════════════════════════════════════════════════{RESET}')
             
-                choice = input(f'{GREEN}> {RESET}')
+            choice = input(f'{GREEN}> {RESET}')
                 
                 if choice == '1':
                     self.link_to_uid_converter()
