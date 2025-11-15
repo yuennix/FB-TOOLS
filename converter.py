@@ -69,8 +69,7 @@ class WeynTool:
             print()
             try:
                choice = input(f'{GREEN}> {RESET}')
-                
-                if choice == '1':
+            if choice == '1':
                     self.link_to_uid_converter()
                 elif choice == '2':
                     self.get_tokens('token')
