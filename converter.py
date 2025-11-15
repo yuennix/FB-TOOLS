@@ -41,28 +41,35 @@ class WeynTool:
     def print_banner(self):
         self.clear_screen()
         print()
-        print(f'          \033[31m██     ██ ███████ ██    ██ ███    ██')
-        print(f'          \033[31m██     ██ ██       ██  ██  ████   ██')
-        print(f'          \033[31m██  █  ██ █████     ████   ██ ██  ██')
-        print(f'          \033[31m██ ███ ██ ██         ██    ██  ██ ██')
-        print(f'          \033[31m ███ ███  ███████    ██    ██   ████')
-        print(f'          \033[32m▀▀     ▀▀ ▀▀▀▀▀▀▀ ▀▀    ▀▀ ▀▀▀    ▀▀')
-        print(f'\n          {CYAN}[ {YELLOW}FACEBOOK TOOLS SUITE {CYAN}]')
-        print(f'          {CYAN}[ Developed by {PINK}WEYN DUMP {CYAN}]')
+        print(f'\033[31m██     ██ ███████ ██    ██ ███    ██')
+        print(f'\033[31m██     ██ ██       ██  ██  ████   ██')
+        print(f'\033[31m██  █  ██ █████     ████   ██ ██  ██')
+        print(f'\033[31m██ ███ ██ ██         ██    ██  ██ ██')
+        print(f'\033[31m ███ ███  ███████    ██    ██   ████')
+        print(f'\033[32m ▀▀▀ ▀▀▀  ▀▀▀▀▀▀▀    ▀▀    ▀▀   ▀▀▀▀')
+        print(f'\n{CYAN}[ {YELLOW}FACEBOOK TOOLS SUITE {CYAN}]')
+        print(f'{CYAN}[ Developed by {PINK}WEYN DUMP {CYAN}]')
         print()
     
     def main_menu(self):
         while True:
             self.print_banner()
-            print(f'          {BRIGHT_BLUE}╔═══════════════════════════════════╗')
-            print(f'          {BRIGHT_BLUE}║{YELLOW}[1]{RESET}{BRIGHT_RED}UID|Pass{RESET} │ {YELLOW}[4]{RESET}{BRIGHT_RED}AppState{RESET} {BRIGHT_BLUE}║')
-            print(f'          {BRIGHT_BLUE}║{YELLOW}[2]{RESET}{BRIGHT_RED}Token{RESET}    │ {YELLOW}[5]{RESET}{BRIGHT_RED}C_USER{RESET}   {BRIGHT_BLUE}║')
-            print(f'          {BRIGHT_BLUE}║{YELLOW}[3]{RESET}{BRIGHT_RED}Cookie{RESET}   │ {YELLOW}[6]{RESET}{BRIGHT_RED}All Data{RESET} {BRIGHT_BLUE}║')
-            print(f'          {BRIGHT_BLUE}╠═══════════════════════════════════╣')
-            print(f'          {BRIGHT_BLUE}║       {YELLOW}[0]{RESET}{BRIGHT_RED}Exit{RESET}            {BRIGHT_BLUE}║')
-            print(f'          {BRIGHT_BLUE}╚═══════════════════════════════════╝{RESET}')
+            print(f'{BRIGHT_BLUE}╔═══════════════════════════════════╗')
+            print(f'{BRIGHT_BLUE}║                                   ║')
+            print(f'{BRIGHT_BLUE}║  {YELLOW}[1]{RESET} {BRIGHT_RED}UID|Pass{RESET}   {YELLOW}[4]{RESET} {BRIGHT_RED}AppState{RESET}  {BRIGHT_BLUE}║')
+            print(f'{BRIGHT_BLUE}║                                   ║')
+            print(f'{BRIGHT_BLUE}║  {YELLOW}[2]{RESET} {BRIGHT_RED}Token{RESET}      {YELLOW}[5]{RESET} {BRIGHT_RED}C_USER{RESET}    {BRIGHT_BLUE}║')
+            print(f'{BRIGHT_BLUE}║                                   ║')
+            print(f'{BRIGHT_BLUE}║  {YELLOW}[3]{RESET} {BRIGHT_RED}Cookie{RESET}     {YELLOW}[6]{RESET} {BRIGHT_RED}All Data{RESET}  {BRIGHT_BLUE}║')
+            print(f'{BRIGHT_BLUE}║                                   ║')
+            print(f'{BRIGHT_BLUE}╠═══════════════════════════════════╣')
+            print(f'{BRIGHT_BLUE}║                                   ║')
+            print(f'{BRIGHT_BLUE}║         {YELLOW}[0]{RESET} {BRIGHT_RED}Exit{RESET}              {BRIGHT_BLUE}║')
+            print(f'{BRIGHT_BLUE}║                                   ║')
+            print(f'{BRIGHT_BLUE}╚═══════════════════════════════════╝{RESET}')
+            print()
             try:
-                choice = input(f'          {GREEN}> {RESET}')
+                choice = input(f'{GREEN}> {RESET}')
                 
                 if choice == '1':
                     self.link_to_uid_converter()
@@ -132,19 +139,22 @@ class WeynTool:
             self.print_banner()
             print(f'{YELLOW}Link to UID|Password Converter{RESET}')
             password = input(f'{GREEN}Password: {RESET}')
+            if password.lower() in ['0', 'b', 'back']:
+                break
             print(f'{CYAN}Enter links (blank to finish):{RESET}')
             
             links = []
             while True:
                 link = input()
+                if link.strip().lower() in ['0', 'b', 'back']:
+                    return
                 if link.strip() == '':
                     break
                 links.append(link.strip())
             
             if not links:
                 print(f'{RED}No links!{RESET}')
-                if input(f'{GREEN}Back? (y/n): {RESET}').lower() == 'y':
-                    break
+                input(f'{GREEN}Press Enter...{RESET}')
                 continue
             
             print(f'{CYAN}Processing {len(links)}...{RESET}')
@@ -175,7 +185,8 @@ class WeynTool:
             else:
                 print(f'{RED}All failed!{RESET}')
             
-            if input(f'{GREEN}Back? (y/n): {RESET}').lower() == 'y':
+            choice = input(f'{GREEN}Press Enter to continue or 0 to go back...{RESET}')
+            if choice.lower() in ['0', 'b', 'back']:
                 break
     
     def get_facebook_token_data(self, email, password):
@@ -254,6 +265,8 @@ class WeynTool:
             try:
                 while True:
                     line = input()
+                    if line.strip().lower() in ['0', 'b', 'back']:
+                        return
                     if not line:
                         break
                     lines.append(line)
@@ -273,8 +286,7 @@ class WeynTool:
             
             if not accounts:
                 print(f'{RED}No accounts!{RESET}')
-                if input(f'{GREEN}Back? (y/n): {RESET}').lower() == 'y':
-                    break
+                input(f'{GREEN}Press Enter...{RESET}')
                 continue
             
             print(f'{CYAN}Processing {len(accounts)}...{RESET}')
@@ -306,7 +318,8 @@ class WeynTool:
                 if input(f'{GREEN}Save? (y/n): {RESET}').lower() == 'y':
                     self.save_token_results(results, mode)
             
-            if input(f'{GREEN}Back? (y/n): {RESET}').lower() == 'y':
+            choice = input(f'{GREEN}Press Enter to continue or 0 to go back...{RESET}')
+            if choice.lower() in ['0', 'b', 'back']:
                 break
     
     def display_results(self, results, mode):
