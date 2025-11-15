@@ -47,22 +47,22 @@ class WeynTool:
         print(f'          \033[31m██ ███ ██ ██         ██    ██  ██ ██')
         print(f'          \033[31m ███ ███  ███████    ██    ██   ████')
         print(f'          \033[32m▀▀     ▀▀ ▀▀▀▀▀▀▀ ▀▀    ▀▀ ▀▀▀    ▀▀')
-        print(f'\n              {CYAN}[ {YELLOW}FACEBOOK TOOLS SUITE {CYAN}]')
-        print(f'              {CYAN}[ Developed by {PINK}WEYN DUMP {CYAN}]')
+        print(f'\n          {CYAN}[ {YELLOW}FACEBOOK TOOLS SUITE {CYAN}]')
+        print(f'          {CYAN}[ Developed by {PINK}WEYN DUMP {CYAN}]')
         print()
     
     def main_menu(self):
         while True:
             self.print_banner()
-            print(f'              {BRIGHT_BLUE}╔═══════════════════════════════════╗')
-            print(f'              {BRIGHT_BLUE}║{YELLOW}[1]{RESET}{BRIGHT_RED}UID|Pass{RESET} │ {YELLOW}[4]{RESET}{BRIGHT_RED}AppState{RESET} {BRIGHT_BLUE}║')
-            print(f'              {BRIGHT_BLUE}║{YELLOW}[2]{RESET}{BRIGHT_RED}Token{RESET}    │ {YELLOW}[5]{RESET}{BRIGHT_RED}C_USER{RESET}   {BRIGHT_BLUE}║')
-            print(f'              {BRIGHT_BLUE}║{YELLOW}[3]{RESET}{BRIGHT_RED}Cookie{RESET}   │ {YELLOW}[6]{RESET}{BRIGHT_RED}All Data{RESET} {BRIGHT_BLUE}║')
-            print(f'              {BRIGHT_BLUE}╠═══════════════════════════════════╣')
-            print(f'              {BRIGHT_BLUE}║       {YELLOW}[0]{RESET}{BRIGHT_RED}Exit{RESET}            {BRIGHT_BLUE}║')
-            print(f'              {BRIGHT_BLUE}╚═══════════════════════════════════╝{RESET}')
+            print(f'          {BRIGHT_BLUE}╔═══════════════════════════════════╗')
+            print(f'          {BRIGHT_BLUE}║{YELLOW}[1]{RESET}{BRIGHT_RED}UID|Pass{RESET} │ {YELLOW}[4]{RESET}{BRIGHT_RED}AppState{RESET} {BRIGHT_BLUE}║')
+            print(f'          {BRIGHT_BLUE}║{YELLOW}[2]{RESET}{BRIGHT_RED}Token{RESET}    │ {YELLOW}[5]{RESET}{BRIGHT_RED}C_USER{RESET}   {BRIGHT_BLUE}║')
+            print(f'          {BRIGHT_BLUE}║{YELLOW}[3]{RESET}{BRIGHT_RED}Cookie{RESET}   │ {YELLOW}[6]{RESET}{BRIGHT_RED}All Data{RESET} {BRIGHT_BLUE}║')
+            print(f'          {BRIGHT_BLUE}╠═══════════════════════════════════╣')
+            print(f'          {BRIGHT_BLUE}║       {YELLOW}[0]{RESET}{BRIGHT_RED}Exit{RESET}            {BRIGHT_BLUE}║')
+            print(f'          {BRIGHT_BLUE}╚═══════════════════════════════════╝{RESET}')
             try:
-                choice = input(f'              {GREEN}> {RESET}')
+                choice = input(f'          {GREEN}> {RESET}')
                 
                 if choice == '1':
                     self.link_to_uid_converter()
